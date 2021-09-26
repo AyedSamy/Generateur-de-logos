@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Exemple d'utilisation d'un web component</title>
+        <script src="myComponents/index.js" type="module"></script>
+        <style>
+            html {
+                background-image: url("https://raw.githubusercontent.com/AyedSamy/Data-Jobs-Deployment/main/static/bg.jpg");
+                background-size:cover;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="font-family: Georgia, serif; color:white; text-align: center;">Générateur de logos</h1>
+        
+        <my-logo id="leLogo"
+                text="MonLogo"
+                horizontalAlignment="center"
+                verticalAlignment="center"
+                fontFamily="Arial, sans-serif"
+                textSize="50"
+                logoHeight= "210"
+                logoWidth="305"
+                borderStyle="inset"
+                borderWidth="10"
+                borderRadius="60%"
+                borderColor="#5118d9"
+                textcolor="#0256cc"
+                bgImage="plage"
+                bgOpacity="0.8"
+                logoAnimation="wobble-ver-left"
+                textAnimation="tracking-in-contract-bck"
+                showControls="True">
+        </my-logo>
+
+        <my-logo id="leLogo"
+                text="MonLogo"
+                horizontalAlignment="center"
+                verticalAlignment="center"
+                fontFamily="Arial, sans-serif"
+                textSize="70"
+                logoHeight= "230"
+                logoWidth="365"
+                borderStyle="solid"
+                borderWidth="10"
+                borderRadius="0%"
+                borderColor="#801340"
+                textcolor="#8c001a"
+                bgImage="stade"
+                bgOpacity="1"
+                logoAnimation="heartbeat"
+                textAnimation="tracking-in-contract-bck"
+                showControls="True">
+        </my-logo>
+
+    </body>
+    
+
+</html>
