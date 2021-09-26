@@ -11,5 +11,5 @@ Possibilité de paramétrer différentes caractéristiques:
 - Bordures (épaisseur, styles de bordures, couleur, radius)
 - Affichage du panel de contrôle
 
-AYED Samy
+AYED Samy<br>
 M2 MIAGE IA2
