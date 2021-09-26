@@ -52,7 +52,7 @@
                 showControls="True">
         </my-logo>
 
-        <span style="font-family: Georgia, serif; color:white; margin-left: 20px;">Generate logo : <button onclick="generateLogo()" style="font-family: Georgia, serif;">I'm lucky</button></span>
+        <span style="font-family: Georgia, serif; color:white; margin-left: 20px; margin-bottom: 20px;">Generate logo : <button onclick="generateLogo()" style="font-family: Georgia, serif;">I'm lucky</button></span>
 
         <div id="randomLogo">
             
@@ -63,8 +63,7 @@
 
 
     <script>
-        let hPositions = ["center","flex-end","flex-start"];
-        let vPositions = ["center","flex-end","flex-start"];
+        let positions = ["center","flex-end","flex-start"];
         let fontFamilies = ["Arial, sans-serif","Trebuchet MS, sans-serif","Verdana, sans-serif","Tahoma, sans-serif",
         "Andale Mono, monospace","Courier, monospace","Brush Script MT, cursive","Florence, cursive","Impact, fantasy"];
         let textAnimations = ["text-pop-up-tr","focus-in-expand","tracking-in-contract-bck"];
@@ -88,15 +87,11 @@
             return `${Math.floor(Math.random() * (max - min) + min)}`; //The maximum is exclusive and the minimum is inclusive
         }
 
-        console.log(Math.round(Math.random() * 100) / 100);
-        console.log(getRandomInt(1, 11));
-        console.log(bgImages[bgImages.length * Math.random() | 0]);
-
         function generateLogo(){
             let randomLogo = `<my-logo id="leLogo"
                 text="MonLogo"
-                horizontalAlignment="${hPositions[Math.floor(Math.random()*hPositions.length)]}"
-                verticalAlignment="${vPositions[Math.floor(Math.random()*vPositions.length)]}"
+                horizontalAlignment="${positions[Math.floor(Math.random()*positions.length)]}"
+                verticalAlignment="${positions[Math.floor(Math.random()*positions.length)]}"
                 fontFamily="${fontFamilies[Math.floor(Math.random()*fontFamilies.length)]}"
                 textSize="70"
                 logoHeight= "230"
