@@ -52,7 +52,71 @@
                 showControls="True">
         </my-logo>
 
+        <span style="font-family: Georgia, serif; color:white; margin-left: 20px;">Generate logo : <button onclick="generateLogo()" style="font-family: Georgia, serif;">I'm lucky</button></span>
+
+        <div id="randomLogo">
+            
+        </div>
+
     </body>
     
+
+
+    <script>
+        let hPositions = ["center","flex-end","flex-start"];
+        let vPositions = ["center","flex-end","flex-start"];
+        let fontFamilies = ["Arial, sans-serif","Trebuchet MS, sans-serif","Verdana, sans-serif","Tahoma, sans-serif",
+        "Andale Mono, monospace","Courier, monospace","Brush Script MT, cursive","Florence, cursive","Impact, fantasy"];
+        let textAnimations = ["text-pop-up-tr","focus-in-expand","tracking-in-contract-bck"];
+        let logoAnimations =  ["roll-in-left","rotate-center","rotate-diagonal-1","flip-horizontal-bottom","jello-horizontal","heartbeat","wobble-ver-left","none"];
+        let borderStyles = ["outset","inset","ridge","groove","double","solid","dashed","dotted","hidden","none"];
+        let bgImages = ["flammes","stade","plage","none"];
+
+
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return `${Math.floor(Math.random() * (max - min) + min)}`; //The maximum is exclusive and the minimum is inclusive
+        }
+
+        console.log(Math.round(Math.random() * 100) / 100);
+        console.log(getRandomInt(1, 11));
+        console.log(bgImages[bgImages.length * Math.random() | 0]);
+
+        function generateLogo(){
+            let randomLogo = `<my-logo id="leLogo"
+                text="MonLogo"
+                horizontalAlignment="${hPositions[Math.floor(Math.random()*hPositions.length)]}"
+                verticalAlignment="${vPositions[Math.floor(Math.random()*vPositions.length)]}"
+                fontFamily="${fontFamilies[Math.floor(Math.random()*fontFamilies.length)]}"
+                textSize="70"
+                logoHeight= "230"
+                logoWidth="365"
+                borderStyle="${borderStyles[Math.floor(Math.random()*borderStyles.length)]}"
+                borderWidth="${getRandomInt(0, 31)}"
+                borderRadius="${getRandomInt(0, 101)}%"
+                borderColor="${getRandomColor()}"
+                textcolor="${getRandomColor()}"
+                bgImage="${bgImages[Math.floor(Math.random()*bgImages.length)]}"
+                bgOpacity="${Math.round(Math.random() * 100) / 100}"
+                logoAnimation="${logoAnimations[Math.floor(Math.random()*logoAnimations.length)]}"
+                textAnimation="${textAnimations[Math.floor(Math.random()*textAnimations.length)]}"
+                showControls="True">`
+
+            document.querySelector("#randomLogo").innerHTML = randomLogo;
+        }
+
+        
+
+    </script>
 
 </html>

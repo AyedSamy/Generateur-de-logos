@@ -76,7 +76,9 @@ class MyLogo extends HTMLElement {
     this.shadowRoot.querySelector("#textColorSelect").value = this.textColor;
     this.myLogo.style.fontFamily = this.fontFamily;
     this.shadowRoot.querySelector("#fontFamilyChoice").value = this.fontFamily;
-    this.myLogoBg.style.background = "url(" + getBaseURL() + `images/${this.bgImage}.jpg)`;
+    if (this.bgImage != "none"){
+      this.myLogoBg.style.background = "url(" + getBaseURL() + `images/${this.bgImage}.jpg)`;
+    }
     this.shadowRoot.querySelector("#bgChoice").value = this.bgImage;
     this.myLogoBg.style.backgroundSize = "contain";
     this.shadowRoot.querySelector("#bgOpacity").value = this.bgOpacity;
@@ -139,8 +141,13 @@ class MyLogo extends HTMLElement {
     this.shadowRoot
       .querySelector("#bgChoice")
       .addEventListener("change", (event) => {
-        this.myLogoBg.style.background = "url(" + getBaseURL() + `images/${event.target.value}.jpg)`;
-        this.myLogoBg.style.backgroundSize = "contain";
+        if(event.target.value != "none"){
+          this.myLogoBg.style.background = "url(" + getBaseURL() + `images/${event.target.value}.jpg)`;
+          this.myLogoBg.style.backgroundSize = "contain";
+        }
+        else{
+          this.myLogoBg.style.background = "";
+        }
     });
 
     /* Change logo animation */

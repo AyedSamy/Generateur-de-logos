@@ -10,6 +10,7 @@ Possibilité de paramétrer différentes caractéristiques:
 - Opacité du fond
 - Bordures (épaisseur, styles de bordures, couleur, radius)
 - Affichage du panel de contrôle
+- Générateur de logo aléatoire
 
 AYED Samy<br>
 M2 MIAGE IA2
